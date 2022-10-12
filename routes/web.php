@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Http\Controllers\CommentController;
 use App\Jobs\SendBulkEmailJob;
 use App\Mail\SendBulkEmail;
+use App\Http\Livewire\LoginForm;
 
 
 /*
@@ -30,6 +31,8 @@ Route::get('/send', function(){
     // dd('d');
 });
 
+
+Route::get('/login', LoginForm::class);
 
 Route::get('comment/create',[CommentController::class, 'create']);
 Route::get('comment/edit/{comment:comment}',[CommentController::class, 'edit']);
